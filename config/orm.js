@@ -1,51 +1,54 @@
 var connection = require('../config/connection.js');
+// var connection = require('/connection.js');
 
-function printQuestionMarks(num){
-  var arr = [];
+function printQuestionMarks(num) {
+    var arr = [];
 
-  for (var i=0; i<num; i++){
-    arr.push('?')
-  }
+    for (var i = 0; i < num; i++) {
+        arr.push('?')
+    }
 
-  return arr.toString();
+    return arr.toString();
 }
 
-function objToSql(ob){
-  
-  var arr = [];
+function objToSql(ob) {
 
-  for (var key in ob) {
-    arr.push(key + '=' + ob[key]);
-  }
+    var arr = [];
 
-  return arr.toString();
+    for (var key in ob) {
+        arr.push(key + '=' + ob[key]);
+    }
+
+    return arr.toString();
 }
 
 var orm = {
-	selectAll: function(tableInput, cb) {
-		var queryString = 'SELECT * FROM ' + tableInput + ';';
-		connection.query(queryString, function(err, result) {
-			cb(result);
-		});
-	},
+    selectAll: function(tableInput, cb) {
+        var queryString = 'SELECT * FROM ' + tableInput + ';';
+        connection.query(queryString, function(err, result) {
+            cb(result);
+        });
+    },
 
-	insertOne: function(table, cols, vals, cb) {
-		var queryString = 'INSERT INTO ' + table + ' (' + cols.toString() +') ' + 'VALUES (' + printQuestionMarks(vals.length) + ') ';
+    insertOne: function(table, cols, vals, cb) {
+        var queryString = 'INSERT INTO ' + table + ' (' + cols.toString() + ') ' + 'VALUES (' + printQuestionMarks(vals.length) + ') ';
 
-		console.log(queryString)
+        console.log(queryString)
 
-		connection.query(queryString, vals, function(err, result){
-			cb(result);
-		});
-	},
+        connection.query(queryString, vals, function(err, result) {
+            cb(result);
+        });
+    },
 
-	updateOne: function(table, objColVals, condition, cb) {
-		var queryString = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition;
+    updateOne: function(table, objColVals, condition, cb) {
+        var queryString = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition;
 
-		console.log(queryString); 
+        console.log(queryString);
 
-		connection.query(queryString, function(err, result){
-			cb(result);
-		});
-	}
+        connection.query(queryString, function(err, result) {
+            cb(result);
+        });
+    }
 };
+
+module.exports = orm;
