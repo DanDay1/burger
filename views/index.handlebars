@@ -1,9 +1,14 @@
 <h1>Cheesy Burger</h1>
 
 <main>
+
   <div class="container">
+
     <div class="row">
+
       <div class="col s6">
+      <h2>burgers</h2>
+      <p>Click item to devour</p>
         {{#each burgers}}
           {{#unless this.devoured}}
             <div>
@@ -16,6 +21,7 @@
       </div>
 
       <div class="col s6">
+      <h2>devoured</h2>
         {{#each burgers}}
           {{#if this.devoured}}
             <div class='burgerEaten'>
@@ -26,8 +32,11 @@
           {{/if}}
         {{/each}}
       </div>
+
     </div>
+
   </div>
+  
 </main>
 
 <h2>Build Your Own!</h2>

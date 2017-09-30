@@ -2,20 +2,12 @@ html {
  	background-color: yellow;
  }
 
- body {
- 	width: 75%;
-	margin: 0 auto; 
-
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-	background-color: red;
- }
-
-/* #cute_burger {
- 	display: block;
-    margin: auto;
- }*/
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: green;
+}
 
  h1 {
  	text-align: center;
@@ -24,36 +16,6 @@ html {
  	margin: 50px;
  }
 
- /*.burgerAvailable {
- 	font-family: 'Crafty Girls', cursive;
- 	font-weight: normal;
- 	font-size: 20px;
- 	text-align: center;
-
- 	border-radius: 25px;
- 	width: 100%;
- 	margin: 10px;
- 	padding: 10px;
- 	background-color: #b7ffc2;
- 	border: none;
- }*/
-
- /*.burgerAvailable:hover {
- 	background-color: #81ff94;
- }*/
-
-/* .burgerEaten {
- 	font-family: 'Crafty Girls', cursive;
- 	font-weight: normal;
- 	font-size: 20px;
- 	text-align: center;
-
- 	border-radius: 25px;
- 	margin: 10px;
- 	padding: 10px;
- 	background-color: #ffd1c9;
- }*/
-
  h2 {
   	text-align: center;
  	font-family: 'helvetica', times;
@@ -61,14 +23,20 @@ html {
  	margin: 50px;
  }
 
-/* .formContainer {
- 	background-color: orange;
- }*/
+.burgerAvailable {
+	font-family: 'helvetica', times;
+ 	font-size: 20px;
+ 	text-align: center;
+
+ 	border-radius: 25px;
+ 	width: 100%;
+ 	margin: 0;
+ 	padding: 10px;
+ }
 
  .addBurgerButton {
  	font-family: 'helvetica', times;
-/* 	font-weight: normal;
-*/ 	font-size: 20px;
+ 	font-size: 20px;
  	text-align: center;
 
  	border-radius: 25px;
@@ -76,14 +44,8 @@ html {
  	margin: 0;
  	padding: 10px;
  	background-color: blue;
- 	/*border: none;*/
  }
 
 .addBurgerButton:active {
 	background-color: green;
 }
-
-.burgerFooter {
-/*	background-color: #FFC04C;
-	padding: 20px 0;
-}*/
